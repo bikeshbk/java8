@@ -2,10 +2,13 @@ import java.util.List;
 
 public class FunInterface {
 
+    private Calculator getAdd() {
+        return (a, b) -> a + b;
+    }
+
     public void lambdaExpression(List<Mynumber> lists) {
-        Calculator cal = (a, b) -> a + b;
         for (Mynumber mynumber : lists) {
-            System.out.println("Sum of a and b :" + mynumber.process(cal));
+            System.out.println("Sum of a and b :" + mynumber.process(getAdd()));
         }
         lists.forEach(list -> {
             System.out.println("Multiple of a and b :" + list.process((a, b) -> a * b));
